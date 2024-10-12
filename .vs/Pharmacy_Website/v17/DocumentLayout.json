@@ -1,0 +1,193 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\wwwroot\\modules\\settings.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\wwwroot\\modules\\settings.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\wwwroot\\modules\\products.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\wwwroot\\modules\\products.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\wwwroot\\modules\\items.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\wwwroot\\modules\\items.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177EA40B-F028-4854-9762-37CBCB970ADA}|Dominos\\Dominos.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\dominos\\settingsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177EA40B-F028-4854-9762-37CBCB970ADA}|Dominos\\Dominos.csproj|solutionrelative:dominos\\settingsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{177EA40B-F028-4854-9762-37CBCB970ADA}|Dominos\\Dominos.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\dominos\\slidermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{177EA40B-F028-4854-9762-37CBCB970ADA}|Dominos\\Dominos.csproj|solutionrelative:dominos\\slidermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|d:\\my-projects\\c#\\aspnet\\pharmacy_website\\pharmacy_website\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}|Pharmacy_Website\\Pharmacy_Website.csproj|solutionrelative:pharmacy_website\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Program.cs",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\Program.cs",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Program.cs",
+              "RelativeToolTip": "Pharmacy_Website\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T12:56:10.076Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Items.js",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Items.js",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\wwwroot\\Modules\\Items.js",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Items.js",
+              "RelativeToolTip": "Pharmacy_Website\\wwwroot\\Modules\\Items.js",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA8wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-11T13:54:01.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SliderModel.cs",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Dominos\\SliderModel.cs",
+              "RelativeDocumentMoniker": "Dominos\\SliderModel.cs",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Dominos\\SliderModel.cs",
+              "RelativeToolTip": "Dominos\\SliderModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T13:47:22.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SettingsModel.cs",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Dominos\\SettingsModel.cs",
+              "RelativeDocumentMoniker": "Dominos\\SettingsModel.cs",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Dominos\\SettingsModel.cs",
+              "RelativeToolTip": "Dominos\\SettingsModel.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAA6wB8AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T13:46:26.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Pharmacy_Website\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAOYAAAAAAAAAAAAAAOYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-11T12:48:32.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings.js",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Settings.js",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\wwwroot\\Modules\\Settings.js",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Settings.js",
+              "RelativeToolTip": "Pharmacy_Website\\wwwroot\\Modules\\Settings.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-11T12:47:46.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Products.js",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Products.js",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\wwwroot\\Modules\\Products.js",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Products.js",
+              "RelativeToolTip": "Pharmacy_Website\\wwwroot\\Modules\\Products.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-11T12:47:27.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Pharmacy_Website\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Pharmacy_Website\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAA1wBQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T12:45:32.155Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 35,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

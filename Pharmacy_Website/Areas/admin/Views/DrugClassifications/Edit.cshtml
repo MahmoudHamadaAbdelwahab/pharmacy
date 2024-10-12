@@ -1,0 +1,43 @@
+﻿@* this form when new item & edit  *@
+@model ProdcutsClassificationModel
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Form elements </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description"> Basic form layout </p>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="DrugClassifications" asp-action="Save" role="form">
+
+                        <input asp-for="ProdcutsClassificationId" type="hidden" />
+                        <input asp-for="TbProducts" type="hidden" />
+
+                        <div class="form-group">
+                            <label for="SupplierName">Drug Classification</label>
+                            <input asp-for="ProdcutsClassificationName" type="text" class="form-control" placeholder="Supplier Name" id="SupplierName">
+                            <span asp-validation-for="ProdcutsClassificationName" class="text-danger"></span>
+                        </div>
+
+                        @* formmethod="post" *@
+                        <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">@ResGeneral.lblSave</button>
+                        <button type="reset" class="btn btn-light">@ResGeneral.lblCansel</button>
+                        <a href="@Url.Action("List")" class="btn btn-secondary">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

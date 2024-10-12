@@ -1,0 +1,103 @@
+﻿@model List<VmOrder>
+@{
+}
+
+@section Styles
+{
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="~/assets/Backend/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+    <!-- End plugin css for this page -->
+}
+
+<div class="container-fluid page-body-wrapper">
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <h3 class="page-title"> Customers Table </h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Data table</li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Data table</h4>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Customer Name</label>
+                                <select asp-items="@(new SelectList(ViewBag.lstCustomer,"CustomerId","CustomerName"))"
+                                        onchange="Search(this)"></select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <a href="/Admin/Pharmcists/Edit" class="btn btn-success btn-fw">New</a>
+                            <table id="order-listing" class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th> Order </th>
+                                        <th> Date </th>
+                                        <th> Customer</th>
+                                        <th> Product</th>
+                                        <th> Drug Classification</th>
+                                        <th> StockQuentity </th>
+                                        <th> Price </th>
+                                        <th>Actuins</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var ord in Model)
+                                    {
+                                        <tr style="margin:0px;padding:0px;">
+                                            <td class="col-md-8">@ord.OrderId</td>
+                                            <td class="col-md-8">@ord.OrderDate</td>
+                                            <td class="col-md-8">@ord.CustomerName</td>
+                                            <td class="col-md-8">@ord.ProductName</td>
+                                            <td class="col-md-8">@ord.ProdcutsClassificationName</td>
+                                            <td class="col-md-8">@ord.StockQuentity</td>
+                                            <td class="col-md-8">@ord.Price</td>
+                                            <td class="col-md-4" style="margin:0px;padding:0px;">
+                                             <a style="height:max-content"
+                                                   asp-controller="Pharmcists" asp-action="Edit" asp-route-customerId="@ord.OrderId"
+                                                   class="btn btn-info btn-fw">Edit</a> 
+
+                                                <a asp-controller="Pharmcists" asp-action="Delete" asp-route-customerId="@ord.OrderId"
+                                                   class="btn btn-danger btn-fw"
+                                                   onclick="return confirm(" Are you sure");">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+    </div>
+    <!-- main-panel ends -->
+</div>
+
+@section Scripts
+{
+    <!-- plugins:js -->
+    <script src="~/Admin/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/Admin/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="~/Admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page -->
+    <script src="~/Admin/js/data-table.js"></script>
+    <!-- End custom js for this page -->
+    <script>
+        function Search(dropDown) {
+            var categoryId = $(dropDown).val();
+            window.location.href = "/admin/Items/Search?id=" + categoryId;
+        }
+    </script>
+}

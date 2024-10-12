@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pharmacy_Website", "Pharmacy_Website\Pharmacy_Website.csproj", "{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bl", "Bl\Bl.csproj", "{FDD0ACCF-1C71-42C0-958F-7F8B97328B0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominos", "Dominos\Dominos.csproj", "{177EA40B-F028-4854-9762-37CBCB970ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBEA3507-1E0C-4491-8A1D-F3A8DC688DA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD0ACCF-1C71-42C0-958F-7F8B97328B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD0ACCF-1C71-42C0-958F-7F8B97328B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD0ACCF-1C71-42C0-958F-7F8B97328B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD0ACCF-1C71-42C0-958F-7F8B97328B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{177EA40B-F028-4854-9762-37CBCB970ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{177EA40B-F028-4854-9762-37CBCB970ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{177EA40B-F028-4854-9762-37CBCB970ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{177EA40B-F028-4854-9762-37CBCB970ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {294B0E3C-BCEE-4903-92EF-B252A15969CF}
+	EndGlobalSection
+EndGlobal

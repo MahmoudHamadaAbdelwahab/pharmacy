@@ -1,0 +1,16 @@
+﻿@model List<ProdcutsClassificationModel>
+
+<li class="has-children">
+    <a href="#">Drug Classifications</a>
+    <ul class="dropdown">
+        @foreach (var classification in Model)
+        {
+            if (classification.ProdcutsClassificationId >= 1) // Assuming ParentId is null for top-level classifications
+            {
+                <li class="has-children">
+                    <a href="#">@classification.ProdcutsClassificationName</a>
+                </li>
+            }
+        }
+    </ul>
+</li>

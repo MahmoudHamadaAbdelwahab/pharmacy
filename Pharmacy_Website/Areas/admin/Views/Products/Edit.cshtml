@@ -1,0 +1,140 @@
+﻿@model ProductsModel
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Product Edit</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">All</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Product</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description">Basic form layout</p>
+
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="Products" asp-action="Save" role="form">
+
+                        <input asp-for="ProductId" type="hidden" />
+                        <input asp-for="TbSupplier" type="hidden" />
+                        <input asp-for="TbPharmcists" type="hidden" />
+                        <input asp-for="TbOrderItem" type="hidden" />
+                        <input asp-for="TbProdcutsClassification" type="hidden" />
+                        <input asp-for="TbImages" type="hidden" />
+
+                        <div class="form-group">
+                            <label for="ProductName">@ResAdmin.lblProductName</label>
+                            <input asp-for="ProductName" type="text" class="form-control" placeholder="Product Name" id="ProductName">
+                            <span asp-validation-for="ProductName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="SalesPrice">Sales Price</label>
+                            <input asp-for="SalesPrice" type="text" class="form-control" placeholder="SalesPrice" id="SalesPrice">
+                            <span asp-validation-for="SalesPrice" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PurchasePrice">Purchase Price</label>
+                            <input asp-for="PurchasePrice" type="text" class="form-control" placeholder="PurchasePrice" id="PurchasePrice">
+                            <span asp-validation-for="PurchasePrice" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="StockQuentity">@ResAdmin.lblStockQuentity</label>
+                            <input asp-for="StockQuentity" type="text" class="form-control" placeholder="StockQuentity" id="StockQuentity">
+                            <span asp-validation-for="StockQuentity" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                        <label asp-for="SupplierId" class="control-label"></label>
+                            <select asp-for="SupplierId" asp-items="@(new SelectList(ViewBag.lstSuppliers, "SupplierId", "SupplierName"))" class="form-control"></select>
+                        </div>
+
+                        <div class="form-group">
+                        <label asp-for="PharmcistId" class="control-label"></label>
+                        <select asp-for="PharmcistId" asp-items="@(new SelectList(ViewBag.lstPharmicts, "PharmcistId", "PharmcistName"))" class="form-control"></select>
+                        </div>
+
+                        <div class="form-group">
+                        <label asp-for="ProdcutsClassificationId" class="control-label"></label>
+                        <select asp-for="ProdcutsClassificationId" asp-items="@(new SelectList(ViewBag.lstClassific, "ProdcutsClassificationId", "ProdcutsClassificationName"))" class="form-control"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea asp-for="Description" type="text" class="form-control" placeholder="Write an overview of the product" id="StockQuentity">
+                            </textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" name="uploadedImages" multiple onchange="Upload.UploadDefaultImg(event)" />
+                        </div>
+                        <button type="submit" class="btn btn-gradient-primary me-2">@ResGeneral.lblSave</button>
+                        <button type="reset" class="btn btn-light">@ResGeneral.lblCansel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <span id="tbImgSrc"></span>
+                    <div id="tbImgSrc">
+                        @if (Model.TbImages != null && Model.TbImages.Any())
+                        {
+                            @foreach (var image in Model.TbImages)
+                            {
+                                <img src="~/Uploads/Products/@image.ImageName" style="width: 100px; height: 100px;" />
+                            }
+                        }
+                        else
+                        {
+                            // Fallback logic: Display a placeholder image or another default image.
+                            <img src="/Uploads/Prodcuts/default-image.png" style="width:95%; height:300px;" alt="No image available" />
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        var Upload = {
+            UploadDefaultImg: function (e) {
+                const files = e.target.files;  // Get all selected files
+                const imagePreviewContainer = $("#tbImgSrc");  // Container to hold image previews
+                imagePreviewContainer.html('');  // Clear previous images
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const reader = new FileReader();
+                    reader.onloadend = (function (file) {
+                        return function (event) {
+                            const fileName = file.name;
+                            const fileBase64 = event.target.result.slice(event.target.result.indexOf('base64,') + 7);
+                            // Create an image preview for each file
+                            imagePreviewContainer.append(`
+                                    <div class="img-preview-container" style="margin-bottom: 10px;">
+                                        <p>${fileName}</p>
+                                        <img class="thumbnail" src="${event.target.result}"
+                                             style="width: 95%; height: 300px; border-radius: 5px; border: 1px solid #d9d9d9; padding: 1px;" />
+                                    </div>
+                                `);
+                        };
+                    })(file);  // Closure to pass the file to the callback
+                    reader.readAsDataURL(file);  // Read each file as Data URL
+                }
+            }
+        };
+    </script>
+}

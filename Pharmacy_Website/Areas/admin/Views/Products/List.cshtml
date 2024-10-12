@@ -1,0 +1,128 @@
+﻿@model List<ProductsModel>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Pharma &mdash; Colorlib Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="/pharmacy/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/pharmacy/css/magnific-popup.css">
+    <link rel="stylesheet" href="/pharmacy/css/jquery-ui.css">
+    <link rel="stylesheet" href="/pharmacy/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/pharmacy/css/owl.theme.default.min.css">
+
+
+    <link rel="stylesheet" href="/pharmacy/css/aos.css">
+
+    <link rel="stylesheet" href="/pharmacy/css/style.css">
+
+</head>
+
+<body>
+        <div class="site-section">
+        <div class="card-description">
+            @{
+                // asp.net core check if user in role is razzor view
+                // user it's found all razzore views
+                if (User.IsInRole("Admin"))
+                {
+                    <a asp-controller="Products" asp-action="Edit" class="btn btn-gradient-primary btn-fw">Product New</a>
+                }
+            }
+            </div>
+            <div class="container">
+        <div class="col-12">
+            </div> 
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
+                        <div id="slider-range" class="border-primary"></div>
+                        <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Reference</h3>
+                        <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference"
+                                data-toggle="dropdown">
+                            Reference
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+                            <a class="dropdown-item" href="#">Relevance</a>
+                            <a class="dropdown-item" href="#">Name, A to Z</a>
+                            <a class="dropdown-item" href="#">Name, Z to A</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Price, low to high</a>
+                            <a class="dropdown-item" href="#">Price, high to low</a>
+                        </div>
+                    </div>
+                </div>
+
+            <h2>Products List</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Sales Price</th>
+                        <th>Images</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var product in Model)
+                    {
+                        <tr>
+                            <td>@product.ProductName</td>
+                            <td>@product.SalesPrice</td>
+                            <td>
+                                @foreach (var image in product.TbImages)
+                                {
+                                    <img src="~/Uploads/Products/@image.ImageName" style="width: 70px; height: 70px;" />
+                                }
+                            </td>
+                            <td>
+                                
+                                <a asp-action="Edit" asp-route-editId="@product.ProductId">Edit</a> |
+                                <a asp-action="Delete" asp-route-deleteId="@product.ProductId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+               
+                <div class="row mt-5">
+                    <div class="col-md-12 text-center">
+                        <div class="site-block-27">
+                            <ul>
+                                <li><a href="#">&lt;</a></li>
+                                <li class="active"><span>1</span></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">&gt;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="/pharmacy/js/jquery-3.3.1.min.js"></script>
+    <script src="/pharmacy/js/jquery-ui.js"></script>
+    <script src="/pharmacy/js/popper.min.js"></script>
+    <script src="/pharmacy/js/bootstrap.min.js"></script>
+    <script src="/pharmacy/js/owl.carousel.min.js"></script>
+    <script src="/pharmacy/js/jquery.magnific-popup.min.js"></script>
+    <script src="/pharmacy/js/aos.js"></script>
+
+    <script src="/pharmacy/js/main.js"></script>
+</body>
+
+</html>
+

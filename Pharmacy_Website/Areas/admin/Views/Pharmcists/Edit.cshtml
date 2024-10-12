@@ -1,0 +1,67 @@
+﻿@* this form when new item & edit  *@
+@model PharmcistsModel
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title"> Form elements </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <p class="card-description"> Basic form layout </p>
+                    <form class="forms-sample" method="post" enctype="multipart/form-data"
+                          asp-controller="Pharmcists" asp-action="Save" role="form">
+
+                        <input asp-for="PharmcistId" type="hidden" />
+                        <input asp-for="TbProducts" type="hidden" />
+                        <input asp-for="Role" type="hidden" /> 
+
+                        <div class="form-group">
+                            <label for="PharmcistName">@ResAdmin.lblPharmcistName</label>
+                            <input asp-for="PharmcistName" type="text" class="form-control" placeholder="Pharmcist Name" id="PharmcistName">
+                            <span asp-validation-for="PharmcistName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PharmcistEmail">@ResAdmin.lblPharmcistEmail</label>
+                            <input asp-for="PharmcistEmail" type="text" class="form-control" placeholder="Pharmcist Email" id="PharmcistEmail">
+                            <span asp-validation-for="PharmcistEmail" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="PhoneNumber">@ResAdmin.lblPhoneNumber</label>
+                            <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" id="PhoneNumber">
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Password">Write Password</label>
+                            <input asp-for="Password" type="text" class="form-control" placeholder="Write Password" id="Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Address">@ResAdmin.lblAddress</label>
+                            <input asp-for="Address" type="text" class="form-control" placeholder="Address" id="Address">
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                        @* formmethod="post" *@
+                        <button type="submit" formmethod="post" class="btn btn-gradient-primary me-2">@ResGeneral.lblSave</button>
+                        <button type="reset" class="btn btn-light">@ResGeneral.lblCansel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
