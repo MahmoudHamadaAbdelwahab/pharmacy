@@ -8081,8 +8081,8 @@
       "PackagePath": "staticwebassets\\Modules\\Items.js"
     },
     {
-      "Id": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Products.js",
-      "PackagePath": "staticwebassets\\Modules\\Products.js"
+      "Id": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Product.js",
+      "PackagePath": "staticwebassets\\Modules\\Product.js"
     },
     {
       "Id": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Settings.js",

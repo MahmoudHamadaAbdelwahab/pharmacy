@@ -622,6 +622,9 @@ namespace Bl.Migrations
 
             modelBuilder.Entity("Dominos.Models.VwProducts", b =>
                 {
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PharmcistName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -655,7 +658,7 @@ namespace Bl.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.ToView("VwItemProducts2");
+                    b.ToView("VmProductsImages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

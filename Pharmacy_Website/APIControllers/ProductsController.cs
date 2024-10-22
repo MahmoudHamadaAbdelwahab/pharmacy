@@ -17,7 +17,7 @@ namespace Pharmacy_Website.APIControllers
             _IProd = pro;
         }
 
-        // GET: api/<ProductsController>
+        //GET: api/<ProductsController>
         [HttpGet]
         public ApiResponse Get()
         {
@@ -28,7 +28,6 @@ namespace Pharmacy_Website.APIControllers
 
             return oApi;
         }
-
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
@@ -52,7 +51,6 @@ namespace Pharmacy_Website.APIControllers
             return oApi;
         }
 
-
         // GET api/<ProductsController>/5
         [HttpGet("GetByProductWithImag/{productId}")]
         public ProductsModel GetByProductWithImag(int productId)
@@ -63,7 +61,6 @@ namespace Pharmacy_Website.APIControllers
             oApi.StatusCode = "200";
             return _IProd.GetByIdWithImages(productId);
         }
-
 
         // POST api/<ProductsController> & it's get all pharmcises in db
         [HttpPost]

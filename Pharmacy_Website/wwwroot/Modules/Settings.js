@@ -13,7 +13,6 @@ var ClsSettings = {
                 instgram.attr("href", data.instgramLink);
                 var twitter = document.getElementById('likTwitter').attr("href", data.twitterLink);
                 var youtube = document.getElementById('likYoutube').attr("href", data.youtubeLink);
-
             }, function () { });
     }
 }

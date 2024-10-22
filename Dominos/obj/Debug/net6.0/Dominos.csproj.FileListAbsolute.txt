@@ -21,3 +21,4 @@ D:\my-projects\C#\AspNet\Pharmacy_Website\Dominos\obj\Debug\net6.0\Dominos.dll
 D:\my-projects\C#\AspNet\Pharmacy_Website\Dominos\obj\Debug\net6.0\refint\Dominos.dll
 D:\my-projects\C#\AspNet\Pharmacy_Website\Dominos\obj\Debug\net6.0\Dominos.pdb
 D:\my-projects\C#\AspNet\Pharmacy_Website\Dominos\obj\Debug\net6.0\ref\Dominos.dll
+D:\my-projects\C#\AspNet\Pharmacy_Website\Dominos\obj\Debug\net6.0\Dominos.sourcelink.json

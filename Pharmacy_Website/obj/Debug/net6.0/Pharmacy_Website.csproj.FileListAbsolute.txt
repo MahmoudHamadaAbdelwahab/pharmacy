@@ -6,7 +6,6 @@ D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Phar
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.AssemblyInfoInputs.cache
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.AssemblyInfo.cs
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.csproj.CoreCompileInputs.cache
-D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.MvcApplicationPartsAssemblyInfo.cs
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.MvcApplicationPartsAssemblyInfo.cache
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.RazorAssemblyInfo.cache
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.RazorAssemblyInfo.cs
@@ -96,3 +95,5 @@ D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\bin\Debug\net6.0\Swas
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\refint\Pharmacy_Website.dll
 D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\ref\Pharmacy_Website.dll
+D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.sourcelink.json
+D:\my-projects\C#\AspNet\Pharmacy_Website\Pharmacy_Website\obj\Debug\net6.0\Pharmacy_Website.MvcApplicationPartsAssemblyInfo.cs

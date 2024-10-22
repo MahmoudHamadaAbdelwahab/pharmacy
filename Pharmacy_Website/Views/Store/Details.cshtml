@@ -11,7 +11,8 @@
         <div class="row">
             <div class="col-md-5 mr-auto">
                 <div class="border text-center">
-                    @if (Model.TbImages != null && Model.TbImages.Any())
+                
+      @*               @if (Model.TbImages != null && Model.TbImages.Any())
                     {
                         int imageIndex = 0;
                         foreach (var image in Model.TbImages)
@@ -22,14 +23,51 @@
                             imageIndex++;
                         }
                     }
-                    else
-                    {
-                        <!-- Default image if no images are available -->
-                        <div class="carousel-item active">
-                            <img src="~/Uploads/Products/default.png" class="d-block w-100" style="width: 100px; height: 100px;" alt="Default Image">
-                        </div>
-                    }
-                
+                    else{
+                        <h1>not show the image</h1>
+                    } *@
+                    <div id="carouselExample" class="carousel carousel-dark slide text-center" data-bs-ride="carousel">
+                        @if (Model.TbImages != null && Model.TbImages.Any())
+                        {
+                            <div class="carousel-indicators">
+                                @{
+                                    int indicatorIndex = 0;
+                                    foreach (var image in Model.TbImages)
+                                    {
+                                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="@indicatorIndex" class="@(indicatorIndex == 0 ? "active" : "")" aria-current="@(indicatorIndex == 0 ? "true" : "")" aria-label="Slide @indicatorIndex"></button>
+                                        indicatorIndex++;
+                                    }
+                                }
+                            </div>
+
+                            <div class="carousel-inner">
+                                @{
+                                    int imageIndex = 0;
+                                    foreach (var image in Model.TbImages)
+                                    {
+                                        <div class="carousel-item @(imageIndex == 0 ? "active" : "")">
+                                            <img src="~/Uploads/Products/@image.ImageName" class="d-block w-100" style="width: 100px; height: 100px;" alt="@Model.ProductName">
+                                        </div>
+                                        imageIndex++;
+                                    }
+                                }
+                            </div>
+
+                            <!-- Carousel controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        }
+                        else
+                        {
+                            <h1>No images found.</h1>
+                        }
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">

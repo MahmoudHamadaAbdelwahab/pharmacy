@@ -27,3 +27,4 @@ D:\my-projects\C#\AspNet\Pharmacy_Website\Bl\obj\Debug\net6.0\refint\Bl.dll
 D:\my-projects\C#\AspNet\Pharmacy_Website\Bl\obj\Debug\net6.0\Bl.pdb
 D:\my-projects\C#\AspNet\Pharmacy_Website\Bl\obj\Debug\net6.0\Bl.genruntimeconfig.cache
 D:\my-projects\C#\AspNet\Pharmacy_Website\Bl\obj\Debug\net6.0\ref\Bl.dll
+D:\my-projects\C#\AspNet\Pharmacy_Website\Bl\obj\Debug\net6.0\Bl.sourcelink.json

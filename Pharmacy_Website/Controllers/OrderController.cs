@@ -19,12 +19,17 @@ namespace Pharmacy_Website.Controllers
         {
             // convert data inside session from string to object 
             // HttpContext.Session.GetString("Cart")
+
             string sessionCart = string.Empty;
             if (HttpContext.Request.Cookies["Cart"] != null)
                 sessionCart = HttpContext.Request.Cookies["Cart"];
-
+                
             var cart = JsonConvert.DeserializeObject<ShoppingCart>(sessionCart);
-            return View(cart);
+           
+            if(cart != null)
+                return View(cart);
+            else
+                return View();
         }
 
         public IActionResult MyOrders() { 

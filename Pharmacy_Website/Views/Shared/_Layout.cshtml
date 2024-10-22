@@ -1,6 +1,7 @@
 ﻿@* create inject to class it's containe general data , it's use system asp.net endbentsy enjuction  & and use in website ) *@
 
 @inject SignInManager<ApplicationUser> _sinInManager;
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +38,12 @@
             <div class="search-wrap">
                 <div class="container">
                     <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-                    <form action="#" method="post">
-                        <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+                    <form asp-controller="Home" asp-action="Index" method="get">
+                        <input 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Type the name of the medication you are looking for..."
+                         >
                     </form>
                 </div>
             </div>
@@ -188,6 +193,8 @@
 
     <script src="~/Modules/Helper.js"></script>
     <script src="~/Modules/Settings.js"></script>
+    <script src="~/Modules/Product.js"></script>
+
     <!-- Code injected by live-server -->
 @*     <script>
         // <![CDATA[  <-- For SVG support
@@ -226,6 +233,12 @@
         }
     </script> *@
         @RenderSection("Scripts", required: false);
+    <script>
+        function Search(dropDown) {
+            var productId = $(dropDown).val();
+            window.location.href = "/Home/Search?id=" + productId;
+        }
+    </script>
 </body>
 
 </html>

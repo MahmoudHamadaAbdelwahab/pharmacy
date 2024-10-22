@@ -8,6 +8,8 @@ namespace Dominos.Bl
         public List<ProductsModel> GetAll();
         public List<ProductsModel> GetAllWithImages();
         public VwProducts GetAllItemsData(int cateId);
+        public List<VwProducts> GetAllProducts();
+
         public ProductsModel GetById(int id);
         public ProductsModel GetByIdWithImages(int id);
         public bool Save(ProductsModel category);
@@ -28,6 +30,7 @@ namespace Dominos.Bl
             try
             {
                 var lstCategories = context.TbProducts.Where(a => a.CurrentState == 1).ToList();
+     
                 return lstCategories;
             }
             catch
@@ -58,12 +61,25 @@ namespace Dominos.Bl
             {
                 // var lstItems = context.VmItemProducts.Where(a => (a.PharmcistId == pharmId && pharmId == null && pharmId == 0)
                 // && a.CurrentState == 1 ).OrderByDescending(a => a.CreatedDate).ToList();
-                var lstItems = context.VwItemProducts2.FirstOrDefault(a => a.ProductId == productId);
+                var lstItems = context.VmProductsImages.FirstOrDefault(a => a.ProductId == productId);
                 return lstItems;
             }
             catch
             {
                 return new VwProducts();
+            }
+        }
+
+        public List<VwProducts> GetAllProducts()
+        {
+            try
+            {
+                var lstProducst = context.VmProductsImages.ToList();
+                return lstProducst;
+            }
+            catch
+            {
+                return new List<VwProducts>();
             }
         }
 

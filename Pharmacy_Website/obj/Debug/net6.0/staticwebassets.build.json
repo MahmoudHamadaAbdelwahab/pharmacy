@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tTCwiPN/LTvKZqPnX7OlK03lWBr2KknI+jZ35G2gsUg=",
+  "Hash": "ssTfNM+yBxkEJK2m8yFgeEkKkY8IW6RB56ot5rzfgkI=",
   "Source": "Pharmacy_Website",
   "BasePath": "_content/Pharmacy_Website",
   "Mode": "Default",
@@ -38624,12 +38624,12 @@
       "OriginalItemSpec": "wwwroot\\Modules\\Items.js"
     },
     {
-      "Identity": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Products.js",
+      "Identity": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Product.js",
       "SourceId": "Pharmacy_Website",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\",
       "BasePath": "_content/Pharmacy_Website",
-      "RelativePath": "Modules/Products.js",
+      "RelativePath": "Modules/Product.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -38640,7 +38640,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Modules\\Products.js"
+      "OriginalItemSpec": "wwwroot\\Modules\\Product.js"
     },
     {
       "Identity": "D:\\my-projects\\C#\\AspNet\\Pharmacy_Website\\Pharmacy_Website\\wwwroot\\Modules\\Settings.js",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bl.Migrations
 {
     [DbContext(typeof(PharmacyContext))]
-    [Migration("20240930152207_addView_migration")]
-    partial class addView_migration
+    [Migration("20241015161003_addView")]
+    partial class addView
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -624,6 +624,9 @@ namespace Bl.Migrations
 
             modelBuilder.Entity("Dominos.Models.VwProducts", b =>
                 {
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
                     b.Property<string>("PharmcistName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -657,7 +660,7 @@ namespace Bl.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.ToView("VwItemProducts2");
+                    b.ToView("VmProductsImages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

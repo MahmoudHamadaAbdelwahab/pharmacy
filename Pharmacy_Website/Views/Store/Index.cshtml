@@ -1,5 +1,13 @@
-﻿@model List<ProductsModel>
-<div class="bg-light py-3">
+﻿@model (List<ProductsModel>, SearchModel)
+
+@section Styles {
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+}
+
+@if (Model.Item1 != null && Model.Item2 != null)
+{
+    <div class="bg-light py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0"><a href="Home/Index">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
@@ -7,66 +15,97 @@
         </div>
     </div>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Price</h3>
-                <div id="slider-range" class="border-primary"></div>
-                <input type="text" name="text" id="amount" class="form-control border-0 pl-0 bg-white" disabled="" />
-            </div>
-            <div class="col-lg-6">
-                <h3 class="mb-3 h6 text-uppercase text-black d-block">Filter by Reference</h3>
-                <button type="button" class="btn btn-secondary btn-md dropdown-toggle px-4" id="dropdownMenuReference"
-                        data-toggle="dropdown">
-                    Reference
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                    <a class="dropdown-item" href="#">Relevance</a>
-                    <a class="dropdown-item" href="#">Name, A to Z</a>
-                    <a class="dropdown-item" href="#">Name, Z to A</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Price, low to high</a>
-                    <a class="dropdown-item" href="#">Price, high to low</a>
-                </div>
-            </div>
-        </div>
+    <div class="site-section">
+        <div class="container">
 
-        <div class="row">
-            @foreach (var prod in Model)
-            {
-                <div class="col-sm-6 col-lg-4 text-center item mb-4">
-                    <a asp-controller="Store" asp-action="Details" asp-route-prodId="@prod.ProductId"
-                       class="btn btn-fw">
+            <form asp-controller="Store" asp-action="Index" method="get">
+                <p>
+                    <!-- Filter by Product Classifications -->
+                    <select asp-for="Item2.SelectedClassificationId" asp-items="@ViewBag.ClassificationList">
+                        <option value="">All</option>
+                    </select>
+
+                    <!-- Search by Product Name -->
+                    <label>Title: <input type="text" asp-for="Item2.SearchNameProducts" /></label>
+                    <input type="submit" value="Filter" />
+                </p>
+            </form>
+
+            <div class="row">
+                @foreach (var prod in Model.Item1)
+                {
+                    <div class="col-sm-6 col-lg-4 text-center item mb-4">
                         <span class="tag">Sale</span>
-                        @* <img src="/Uploads/Prodcuts/@prod.Images" alt="Image"> *@
-                        @foreach (var image in prod.TbImages)
-                        {
-                            <img src="~/uploads/@image.ImageName" style="width: 100px; height: 100px;" />
-                        }
+                        <div id="carousel-@prod.ProductId" class="carousel slide border text-center" data-bs-ride="carousel">
+                            @if (prod.TbImages != null && prod.TbImages.Any())
+                            {
+                                <div class="carousel-indicators">
+                                    @{
+                                        int indicatorIndex = 0;
+                                        foreach (var image in prod.TbImages)
+                                        {
+                                            <button type="button" data-bs-target="#carousel-@prod.ProductId" data-bs-slide-to="@indicatorIndex" class="@(indicatorIndex == 0 ? "active" : "")" aria-current="@(indicatorIndex == 0 ? "true" : "")" aria-label="Slide @indicatorIndex"></button>
+                                            indicatorIndex++;
+                                        }
+                                    }
+                                </div>
+
+                                <div class="carousel-inner">
+                                    @{
+                                        int imageIndex = 0;
+                                        foreach (var image in prod.TbImages)
+                                        {
+                                            <div class="carousel-item @(imageIndex == 0 ? "active" : "")">
+                                                <img src="~/Uploads/Products/@image.ImageName" class="d-block w-100" style="width: 100px; height: 100px;" alt="@prod.ProductName">
+                                            </div>
+                                            imageIndex++;
+                                        }
+                                    }
+                                </div>
+
+                                <!-- Carousel controls -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-@prod.ProductId" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-@prod.ProductId" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            }
+                            else
+                            {
+                                <h1>No images found.</h1>
+                            }
+                        </div>
+
                         <h3 class="text-dark">@prod.ProductName</h3>
                         <p class="price"><del>95.00</del> &mdash; @prod.SalesPrice</p>
-                    </a>
-                    <a asp-controller="Order" asp-action="AddToCart" asp-route-itemId="@prod.ProductId" class="btn btn-success">Add Cart</a>
-                </div>
-            }
-        </div>
+                        <a asp-controller="Store" asp-action="Details" asp-route-prodId="@prod.ProductId" class="btn btn-secondary">Details</a>
+                        <a asp-controller="Order" asp-action="AddToCart" asp-route-itemId="@prod.ProductId" class="btn btn-success">Add Cart</a>
+                    </div>
+                }
+            </div>
 
-        <div class="row mt-5">
-            <div class="col-md-12 text-center">
-                <div class="site-block-27">
-                    <ul>
-                        <li><a href="#">&lt;</a></li>
-                        <li class="active"><span>1</span></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&gt;</a></li>
-                    </ul>
+            <div class="row mt-5">
+                <div class="col-md-12 text-center">
+                    <div class="site-block-27">
+                        <ul>
+                            <li><a href="#">&lt;</a></li>
+                            <li class="active"><span>1</span></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">&gt;</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+}
+else
+{
+    <h1 class="text-center">No products found.</h1>
+}

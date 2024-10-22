@@ -26,7 +26,7 @@ public partial class PharmacyContext : IdentityDbContext <ApplicationUser>
     public virtual DbSet<ImagesModel> TbImages { get; set; }
 
     public virtual DbSet<VmOrder> VmItemOrder { get; set; }
-    public virtual DbSet<VwProducts> VwItemProducts2 { get; set; }
+    public virtual DbSet<VwProducts> VmProductsImages { get; set; }
 
     //public virtual DbSet<ApplicationUser> ApplicationUser { get; set; }
 
@@ -55,8 +55,7 @@ public partial class PharmacyContext : IdentityDbContext <ApplicationUser>
         modelBuilder.Entity<VwProducts>(entity =>
         {
             entity.HasNoKey();
-            entity.ToView("VwItemProducts2"); // same name create in db 
-
+            entity.ToView("VmProductsImages"); // same name create in db 
             entity.Property(e => e.ProductName).HasMaxLength(100);
 
             entity.Property(e => e.PharmcistName).HasMaxLength(200);

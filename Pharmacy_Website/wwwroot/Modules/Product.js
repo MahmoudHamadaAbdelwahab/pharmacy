@@ -1,4 +1,4 @@
-﻿var ClsProducs = {
+﻿var ClsProduct = {
     GetAll: function () {
         Helper.AjaxCallGet("http://localhost:5129/api/Products", {}, "json",
             function (data) {
@@ -8,6 +8,7 @@
                     $('#info').html('<p>Unexpected data format received.</p>');
                     return;
                 }
+                console.log(products);
                 //$('#ItemPagination').pagination({
                 //    dataSource: data.data,
                 //    pageSize: 12,
@@ -18,27 +19,29 @@
                 //        var htmlData = "";
 
                 //        for (var i = 0; i < data.length; i++) {
-                //            htmlData += ClsProducs.DrawItem(data[i]);
+                //            htmlData += ClsProduct.DrawProduct(data[i]);
                 //        }
 
                 //        var d1 = document.getElementById('ItemArea');
                 //        d1.innerHTML = htmlData;
                 //    }
                 //});
-                var htmlData = "";
-                products.forEach(function (product) {
-                    htmlData += ClsProducs.DrawProduct(product);
-                });
 
-                console.log(htmlData);
-                var d1 = document.getElementById("ItemArea");
-                d1.innerHTML = htmlData; // Fixed typo (innerHTML)
+                    var htmlData = "";
+                    products.forEach(function (product) {
+                        htmlData += ClsProduct.DrawProduct(product);
+                    });
+
+                    console.log(htmlData);
+                    var d1 = document.getElementById("ItemArea");
+                    d1.innerHTML = htmlData;
+                },
+                function () {
+                    console.error("AJAX call failed.");
+                    $('#info').html('<p>An error has occurred while fetching products.</p>');
+                });
             },
-            function () {
-                console.error("AJAX call failed.");
-                $('#info').html('<p>An error has occurred while fetching products.</p>');
-            });
-    },
+     }
 
     DrawProduct: function (item) {
         var productImages = '';
@@ -60,6 +63,7 @@
 
         var data = `
             <div class="col-sm-6 col-lg-4 text-center item mb-4">
+
                 <a href="/Store/Details?prodId=${item.ProductId}" class="btn btn-fw">
                     <span class="tag">Sale</span>
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -75,4 +79,4 @@
 
         return data;
     }
-}
+};
