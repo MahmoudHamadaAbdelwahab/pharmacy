@@ -9,13 +9,15 @@ namespace Pharmacy_Website.Controllers
 {
     public class StoreController : Controller
     {
+        PharmacyContext _context;
        ISupplier _ISupplier;
        IPharmicsts _IPharmcists;
        IClassification _IProdClassification;
         IProducts _IProd;
-        public StoreController( IProducts prod,ISupplier supp , IPharmicsts pharmicst ,
+        public StoreController(PharmacyContext context , IProducts prod,ISupplier supp , IPharmicsts pharmicst ,
            IClassification classifi )
         {
+            _context = context;
             _IProd = prod;
             _IProdClassification = classifi;
             _ISupplier = supp;
@@ -27,26 +29,45 @@ namespace Pharmacy_Website.Controllers
         //    return View(_IProd.GetAllWithImages());
         //}
 
+        // This action handles the filtering
         public IActionResult Index(SearchModel searchModel)
         {
-            var products = _IProd.GetAllWithImages();
-           
-            // Apply filtering based on searchModel
-            if (!string.IsNullOrEmpty(searchModel.SearchNameProducts))
+            // Get all products initially
+            var products = _context.TbProducts.Include(p => p.TbSupplier)
+                                            .Include(p => p.TbPharmcists)
+                                            .Include(p => p.TbProdcutsClassification)
+                                            .Include(p => p.TbImages)
+                                            .AsQueryable();
+
+            // Apply filters based on user input
+            if (!string.IsNullOrEmpty(searchModel.ProductName))
             {
-                products = products.Where(p => p.ProductName.Contains(searchModel.SearchNameProducts, StringComparison.OrdinalIgnoreCase)).ToList();
+                products = products.Where(p => p.ProductName.Contains(searchModel.ProductName));
             }
 
-   
-            if (searchModel.SelectedClassificationId.HasValue)
+            if (searchModel.ProdcutsClassificationId.HasValue)
             {
-                products = products.Where(p => p.ProdcutsClassificationId == searchModel.SelectedClassificationId.Value).ToList();
+                products = products.Where(p => p.ProdcutsClassificationId == searchModel.ProdcutsClassificationId);
             }
 
-            var classification = _IProdClassification.GetAll();
-            ViewBag.ClassificationList = new SelectList(classification, "Id", "Name");
+            if (searchModel.SupplierId.HasValue)
+            {
+                products = products.Where(p => p.SupplierId == searchModel.SupplierId);
+            }
 
-            return View((products, searchModel));
+            if (searchModel.PharmcistId.HasValue)
+            {
+                products = products.Where(p => p.PharmcistId == searchModel.PharmcistId);
+            }
+
+            // Populate filter dropdowns
+            searchModel.ProductClassifications = new SelectList(_context.TbProdcutsClassification, "ProdcutsClassificationId", "ProdcutsClassificationName");
+            searchModel.Suppliers = new SelectList(_context.TbSupplier, "SupplierId", "SupplierName");
+            searchModel.Pharmcists = new SelectList(_context.TbPharmcists, "PharmcistId", "PharmcistName");
+
+            // Pass the filtered products and search model to the view
+            ViewBag.Products = products.ToList();
+            return View(searchModel);
         }
 
         public IActionResult Details(int prodId)

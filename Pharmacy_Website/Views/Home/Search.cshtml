@@ -1,0 +1,56 @@
+﻿@model VmHomePage
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="title-section text-center col-12">
+                <h2 class="text-uppercase">Search Products Name</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var prod in Model.lstProducts)
+            {
+                <div class="col-sm-6 col-lg-4 text-center item mb-4">
+                    <a asp-controller="Store" asp-action="Details" asp-route-prodId="@prod.ProductId" class="btn btn-fw">
+                        <span class="tag">Sale</span>
+
+                        <!-- Carousel for product images -->
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                @if (prod.TbImages != null && prod.TbImages.Any())
+                                {
+                                    int imageIndex = 0;
+                                    foreach (var image in prod.TbImages)
+                                    {
+                                        <div class="carousel-item @(imageIndex == 0 ? "active" : "")">
+                                            <img src="~/Uploads/Products/@image.ImageName" class="d-block w-100" style="width: 100px; height: 100px;" alt="@prod.ProductName">
+                                        </div>
+                                        imageIndex++;
+                                    }
+                                }
+                                else
+                                {
+                                    <!-- Default image if no images are available -->
+                                    <div class="carousel-item active">
+                                        <img src="~/Uploads/Products/default.png" class="d-block w-100" style="width: 100px; height: 100px;" alt="Default Image">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <h3 class="text-dark">@prod.ProductName</h3>
+                        <p class="price"><del>95.00</del> &mdash; @prod.SalesPrice</p>
+                    </a>
+                    <a asp-controller="Order" asp-action="AddToCart" asp-route-itemId="@prod.ProductId" class="btn btn-success">Add Cart</a>
+                </div>
+            }
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="shop.html" class="btn btn-primary px-4 py-3">View All Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+

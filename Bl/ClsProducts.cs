@@ -12,6 +12,7 @@ namespace Dominos.Bl
 
         public ProductsModel GetById(int id);
         public ProductsModel GetByIdWithImages(int id);
+        public List<ProductsModel> SearchProductsByName(string productName);
         public bool Save(ProductsModel category);
         public bool Delete(int id);
     }
@@ -108,6 +109,15 @@ namespace Dominos.Bl
                 var products = new ProductsModel();
                 return products;
             }
+        }
+
+
+        public List<ProductsModel> SearchProductsByName(string productName)
+        {
+                return context.TbProducts
+                 .Include(p => p.TbImages) // Include related data if needed
+                 .Where(p => p.ProductName.Contains(productName))
+                 .ToList();
         }
 
         public bool Save(ProductsModel products)

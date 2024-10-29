@@ -49,13 +49,14 @@ namespace Dominos.Models
         [ValidateNever] // Navigation property, not part of form input
         public SupplierModel TbSupplier { get; set; }
 
-        // One-to-One relationship with Pharmacist
+        // Many-to-One relationship with Pharmacist
         [Required(ErrorMessage = "Please select a pharmacist.")]
         public int PharmcistId { get; set; }
 
         [ValidateNever] // Navigation property
         public PharmcistsModel TbPharmcists { get; set; }
 
+        // one-to-one relationship with OrderItemModel
         [ValidateNever] // Navigation property
         public OrderItemModel TbOrderItem { get; set; }
 

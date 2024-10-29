@@ -1,10 +1,10 @@
 ﻿@* create inject to class it's containe general data , it's use system asp.net endbentsy enjuction  & and use in website ) *@
-
 @inject SignInManager<ApplicationUser> _sinInManager;
-
+@{
+    var searchName = ViewBag.SearchName;
+}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Pharma &mdash; Colorlib Template</title>
     <meta charset="utf-8">
@@ -16,7 +16,6 @@
     @* font-awesome *@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
     
-    
     <link rel="stylesheet" href="~/pharmacy/fonts/icomoon/style.css">
     <link rel="stylesheet" href="~/pharmacy/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/pharmacy/css/magnific-popup.css">
@@ -26,24 +25,18 @@
     <link rel="stylesheet" href="~/pharmacy/css/aos.css">
     <link rel="stylesheet" href="~/pharmacy/css/style.css">
 
-    @RenderSection("Styles", required: false);
+    @RenderSection("Styles", required: false)
 </head>
 
 <body>
-
     <div class="site-wrap">
-
         <div class="site-navbar py-2">
 
             <div class="search-wrap">
                 <div class="container">
                     <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
-                    <form asp-controller="Home" asp-action="Index" method="get">
-                        <input 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Type the name of the medication you are looking for..."
-                         >
+                    <form asp-controller="Home" asp-action="Search" method="get">
+                        <input type="text" class="form-control" placeholder="Type product name..." name="@searchName" />
                     </form>
                 </div>
             </div>
@@ -80,6 +73,7 @@
                             </ul>
                         </nav>
                     </div>
+
                     <div class="icons">
                         <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
                         <a href="/Order/Cart" class="icons-btn d-inline-block bag">

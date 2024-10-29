@@ -117,7 +117,7 @@ public partial class PharmacyContext : IdentityDbContext <ApplicationUser>
             .WithMany(a => a.TbOrder) // it's list from CustomerModel 
             .HasForeignKey(c => c.CustomerId); // it's forign key inside OrderModel
         });
-
+              
         modelBuilder.Entity<PaymentModel>(entity =>
         {
             entity.HasKey(e => e.PaymentId);
